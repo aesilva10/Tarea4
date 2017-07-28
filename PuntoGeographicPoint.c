@@ -9,8 +9,7 @@ int n_fil=500;
 int numerosx(int n_col);
 int numerosy(int n_fil);
 int R(int **mat, int x, int y);
-
-//double montecarlo(int **mat);
+void montecarlo(int **mat);
 int inx(int x);
 int iny(int x);
 
@@ -49,10 +48,9 @@ void main()
 	inx(x);
 	iny(x);	
 	R(mat,x,y);
-	//montecarlo(mat);
+	montecarlo(mat);
 	numerosx(n_col);
 	numerosy(n_fil);	
-	
 	printf("%d\n",R(mat,numerosx(n_col),numerosy(n_fil)));
 		
 }
@@ -132,8 +130,7 @@ int iny(int x)
 	}
 }
 
-/*
-double montecarlo(int **mat)
+void montecarlo(int **mat)
 {
 	double x_new, x_last, y_new, y_last,r_new, r_last, alpha;
 	double delta=0.5;
@@ -159,17 +156,11 @@ double montecarlo(int **mat)
 	return x_last,y_last,r_last;	
 	printtf("Las coordenadas del punto mas alejado son: %d %d", x_last,y_last);
 	}
-}
-
-void(montecarlo(mat))
-{
 	FILE *rtax;
     	rtax=fopen("datos.txt","w+");
-	fprintf(rtax,"%f %f\n", montecarlo(mat)[0],montecarlo(mat)[1],montecarlo(mat)[2]);
+	fprintf(rtax,"%f %f\n", x_last,y_last,r_last);
 	fclose(rtax);
 }
-
-*/
 
 
 
